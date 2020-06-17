@@ -134,7 +134,7 @@ function webhookInitialArgs(initialArgs, _status) {
         projectName = "" + CI_PROJECT_REPONAME;
     }
     return (initialArgs = {
-        text: projectName + " " + statusText + "\n" + triggerText + prText,
+        text: triggerText + prText,
     });
 }
 exports.webhookInitialArgs = webhookInitialArgs;
