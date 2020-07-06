@@ -390,7 +390,8 @@ function buildHTMLReportURL(_reportDir, _artefactUrl, _ciProvider) {
 exports.buildHTMLReportURL = buildHTMLReportURL;
 function getArtefactUrl(_vcsRoot, ciProvider, customUrl) {
     if (customUrl) {
-        return (artefactUrl = customUrl);
+        artefactUrl = customUrl + CI_BUILD_NUM + "/artifact/"
+        return (artefactUrl);
     }
     else if (ciProvider === "circleci") {
         switch (_vcsRoot) {

@@ -433,7 +433,8 @@ export function getArtefactUrl(
   customUrl: string
 ) {
   if (customUrl) {
-    return (artefactUrl = customUrl);
+    artefactUrl = `${customUrl}/${CI_BUILD_NUM}/artifact`;
+    return (artefactUrl);
   } else if (ciProvider === "circleci") {
     switch (_vcsRoot) {
       case "github":
