@@ -160,7 +160,7 @@ function attachmentReports(attachmentsReports, _status) {
         jobText = "";
     }
     else {
-        jobText = "Job: " + CI_CIRCLE_JOB + " " +  CI_BUILD_NUM + "\n";
+        jobText = "Job: " + CI_CIRCLE_JOB + " " +  "#" + CI_BUILD_NUM + "\n";
     }
     var envSut;
     if (!ENV_SUT) {
@@ -169,12 +169,19 @@ function attachmentReports(attachmentsReports, _status) {
     else {
         envSut = "SUT: " + ENV_SUT + "\n";
     }
+    var deploymentTarget;
+    if(!process.env.deployment_environment){
+        deploymentTarget = "";
+    } 
+    else {
+        deploymentTarget = "Production Environment: " + process.env.deployment_environment + "\n"
+    }
     switch (_status) {
         case "passed": {
             return (attachments = {
                 color: "#36a64f",
                 fallback: "Report available at " + reportHTMLUrl,
-                text: "" + branchText + jobText + envSut + "Total Passed:  " + totalPasses,
+                text: "" + branchText + jobText + envSut + deploymentTarget + "Total Passed:  " + totalPasses,
                 actions: [
                     {
                         type: "button",

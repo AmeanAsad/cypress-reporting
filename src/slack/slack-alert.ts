@@ -208,12 +208,19 @@ export function attachmentReports(
   } else {
     envSut = `SUT: ${ENV_SUT}\n`;
   }
+  let deploymentTarget;
+  if(!process.env.deployment_environment){
+    deploymentTarget = "";
+  } 
+  else {
+    deploymentTarget = `Production Environment: ${process.env.deployment_environment} \n`
+  } 
   switch (_status) {
     case "passed": {
       return (attachments = {
         color: "#36a64f",
         fallback: `Report available at ${reportHTMLUrl}`,
-        text: `${branchText}${jobText}${envSut}Total Passed:  ${totalPasses}`,
+        text: `${branchText}${jobText}${envSut}${deploymentTarget}Total Passed:  ${totalPasses}`,
         actions: [
           {
             type: "button",
