@@ -170,11 +170,11 @@ function attachmentReports(attachmentsReports, _status) {
         envSut = "SUT: " + ENV_SUT + "\n";
     }
     var deploymentTarget;
-    if(!process.env.deployment_environment){
+    if(!process.env.DEPLOYMENT_ENVIRONMENT){
         deploymentTarget = "";
     } 
     else {
-        deploymentTarget = "Production Environment: " + process.env.deployment_environment + "\n"
+        deploymentTarget = "Production Environment: " + process.env.DEPLOYMENT_ENVIRONMENT + "\n"
     }
     switch (_status) {
         case "passed": {
