@@ -225,7 +225,7 @@ export function attachmentReports(
           {
             type: "button",
             text: "Report",
-            url: "https://hyc-ws-uiverification-jenkins.swg-devops.com/job/Autopilot.ai/HTML_20Report/",
+            url: `https://hyc-ws-uiverification-jenkins.swg-devops.com/job/Autopilot.ai/${CI_BUILD_NUM}/HTML_20Report/`,
             style: "primary",
         },
           {
@@ -242,7 +242,7 @@ export function attachmentReports(
         color: "#ff0000",
         fallback: `Report available at ${reportHTMLUrl}`,
         title: `Total Failed: ${totalFailures}`,
-        text: `${branchText}${jobText}${envSut}Total Tests: ${totalTests}\nTotal Passed:  ${totalPasses} `,
+        text: `${branchText}${jobText}${envSut}${deploymentTarget}Total Tests: ${totalTests}\nTotal Passed:  ${totalPasses} `,
         actions: [
           {
             type: "button",
