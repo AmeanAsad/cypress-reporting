@@ -225,7 +225,7 @@ export function attachmentReports(
           {
             type: "button",
             text: "Report",
-            url: `https://hyc-ws-uiverification-jenkins.swg-devops.com/job/Autopilot.ai/${CI_BUILD_NUM}/HTML_20Report/`,
+            url: `${CI_BUILD_URL}/HTML_20Report/`,
             style: "primary",
         },
           {
@@ -247,7 +247,7 @@ export function attachmentReports(
           {
             type: "button",
             text: "Report",
-            url: `https://hyc-ws-uiverification-jenkins.swg-devops.com/job/Autopilot.ai/${CI_BUILD_NUM}/HTML_20Report/`,
+            url: `${CI_BUILD_URL}/HTML_20Report/`,
             style: "primary",
         },
           {
