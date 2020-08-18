@@ -459,7 +459,7 @@ function resolveCIProvider(ciProvider) {
             break;
         case "jenkins":
             {
-                var _b = process.env, GIT_COMMIT = _b.GIT_COMMIT, BRANCH_NAME = _b.BRANCH_NAME, CHANGE_AUTHOR = _b.CHANGE_AUTHOR, BUILD_URL = _b.BUILD_URL, BUILD_ID = _b.BUILD_ID, CHANGE_ID = _b.CHANGE_ID, JOB_NAME = _b.JOB_NAME;
+                var _b = process.env, GIT_COMMIT = _b.GIT_COMMIT, BRANCH_NAME = _b.BRANCH_NAME, CHANGE_AUTHOR = _b.CHANGE_AUTHOR, BUILD_URL = _b.BUILD_URL, BUILD_ID = _b.BUILD_ID, CHANGE_ID = _b.CHANGE_ID, JOB_NAME = _b.JOB_BASE_NAME;
                 if (typeof process.env.GIT_URL === "undefined") {
                     throw new Error("GIT_URL not defined!");
                 }

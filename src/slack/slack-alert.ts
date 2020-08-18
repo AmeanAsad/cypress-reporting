@@ -515,7 +515,7 @@ export function resolveCIProvider(ciProvider?: string) {
           BUILD_URL,
           BUILD_ID,
           CHANGE_ID,
-          JOB_NAME,
+          JOB_BASE_NAME,
         } = process.env;
         if (typeof process.env.GIT_URL === "undefined") {
           throw new Error("GIT_URL not defined!");
@@ -535,7 +535,7 @@ export function resolveCIProvider(ciProvider?: string) {
           (CI_PULL_REQUEST = CHANGE_ID),
           (CI_PROJECT_REPONAME = PROJECT_REPONAME),
           (CI_PROJECT_USERNAME = PROJECT_USERNAME),
-          (CI_CIRCLE_JOB = JOB_NAME);
+          (CI_CIRCLE_JOB = JOB_BASE_NAME);
         CI_URL = process.env.JENKINS_URL;
       }
       break;
