@@ -174,7 +174,7 @@ function attachmentReports(attachmentsReports, _status) {
         deploymentTarget = "";
     } 
     else {
-        deploymentTarget = "Production Environment: " + process.env.DEPLOYMENT_ENVIRONMENT + "\n"
+        deploymentTarget = "Environment: " + process.env.DEPLOYMENT_ENVIRONMENT + "\n"
     }
     switch (_status) {
         case "passed": {
